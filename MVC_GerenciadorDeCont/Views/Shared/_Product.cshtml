@@ -1,0 +1,26 @@
+﻿@model  Business.Produto
+
+<li>
+    <figure>
+        <a class="aa-product-img" href="@Url.Action("ViewDetails", "Product", new { id = Model.ProductID })"><img src="@Model.ImageURL" alt="#" style="width: 200px; height: 150px;"></a>
+        <a class="aa-add-card-btn" href="@Url.Action("AddToCart", "Product", new { id = Model.ProductID })"><span class="fa fa-shopping-cart"></span>Adicione ao Carrinho</a>
+        <figcaption>
+            <h4 class="aa-product-title"><a href="#">@Model.Name</a></h4>
+            <span class="aa-product-price">R$ @Model.UnitPrice,00 </span><span class="aa-product-old-price">               
+            </span>
+        </figcaption>
+    </figure>
+    <div class="aa-product-hvr-content">
+        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+        <a href="@Url.Action("ViewDetails", "Product", new { id = Model.ProductID })" title="View Details" data-toggle="tooltip" data-placement="top"><span class="fa fa-info"></span></a>
+
+
+    </div>
+    @if (Model.AddBadge == true)
+        {
+            <span class="aa-badge  @Model.OfferBadgeClass" href="#">@Model.OfferTitle</span>
+        }
+        @{
+            TempData["returnURL"] = Request.RawUrl;
+        }
+</li>

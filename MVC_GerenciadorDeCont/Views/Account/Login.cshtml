@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<!-- Cart view section -->
+<section id="aa-myaccount">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-myaccount-area">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="aa-myaccount-login">
+                                <h4>Login</h4>
+
+                                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "aa-login-form" }))
+                                {
+                                    <label for="">E-mail<span>*</span></label>
+                                    <input name="Email" type="text" required placeholder="E-mail">
+                                    <label for="">Senha<span>*</span></label>
+                                    <input name="Password" type="password" required placeholder="Senha">
+                                    <button type="submit" class="aa-browse-btn">Login</button>
+                                    <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme">Lembrar me</label>
+                                    <p class="aa-lost-password"><a href="#">Esqueceu sua Senha ?</a></p>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="aa-myaccount-register">
+                                <h4>Criar uma Conta</h4>
+
+                                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "aa-login-form" }))
+                                {
+                                    <label for="">Nome<span>*</span></label>
+                                    <input name="First_Name" type="text" placeholder="Digite seu Nome">
+
+                                    <label for="">Sobrenome<span>*</span></label>
+                                    <input name="Last_Name" type="text" placeholder="Digite seu Sobrenome">
+
+                                    <label for="">Username<span>*</span></label>
+                                    <input name="UserName" type="text" placeholder="Username">
+
+                                    <label for="">Senha<span>*</span></label>
+                                    <input name="Password" type="password" placeholder="Senha">
+
+                                    <label for="">Email<span>*</span></label>
+                                    <input name="Email" type="text" placeholder="Digite seu E-mail">
+                                    
+
+                                    <button type="submit" class="aa-browse-btn">Cadastrar</button>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Cart view section -->
